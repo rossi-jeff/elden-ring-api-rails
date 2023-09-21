@@ -15,7 +15,7 @@ class Api::RecipesController < ApplicationController
 
 	def show 
 		@recipe = Recipe.find(params[:id])
-		render json: @recipe, status: :ok
+		render json: @recipe, include: [:recipe_materials => {include: [:material]}], status: :ok
 	end
 
 	def update
