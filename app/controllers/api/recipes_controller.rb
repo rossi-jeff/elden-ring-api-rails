@@ -1,6 +1,6 @@
 class Api::RecipesController < ApplicationController
 	def index
-		@recipes = Recipe.all
+		@recipes = Recipe.all.order(:name)
 		render json: @recipes, status: :ok
 	end
 

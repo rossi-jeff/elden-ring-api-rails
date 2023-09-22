@@ -1,6 +1,6 @@
 class Api::CookBooksController < ApplicationController
 	def index
-		@cook_books = CookBook.all
+		@cook_books = CookBook.all.order(:name)
 		render json: @cook_books, status: :ok
 	end
 
@@ -15,7 +15,7 @@ class Api::CookBooksController < ApplicationController
 
 	def show 
 		@cook_book = CookBook.find(params[:id])
-		render json: @cook_book, status: :ok
+		render json: @cook_book, include: [:cook_book_recipes => {include: [:recipe]}], status: :ok
 	end
 
 	def update
