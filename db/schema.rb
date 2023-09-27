@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_19_151118) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_25_142621) do
   create_table "cook_book_recipes", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "cook_book_id", null: false
     t.bigint "recipe_id", null: false
@@ -21,20 +21,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_151118) do
   end
 
   create_table "cook_books", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "name", limit: 100
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_cook_books_on_name"
   end
 
   create_table "materials", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "name", limit: 100
+    t.text "description"
     t.string "location"
     t.integer "price", default: 0
     t.integer "type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_materials_on_name"
   end
 
   create_table "recipe_materials", charset: "utf8mb4", force: :cascade do |t|
@@ -48,16 +50,76 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_151118) do
   end
 
   create_table "recipes", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "name", limit: 100
+    t.text "description"
     t.integer "price", default: 0
     t.integer "type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_recipes_on_name"
+  end
+
+  create_table "weapon_attacks", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "weapon_id", null: false
+    t.integer "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["weapon_id"], name: "index_weapon_attacks_on_weapon_id"
+  end
+
+  create_table "weapon_guards", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "weapon_id", null: false
+    t.integer "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["weapon_id"], name: "index_weapon_guards_on_weapon_id"
+  end
+
+  create_table "weapon_passives", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "weapon_id", null: false
+    t.integer "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["weapon_id"], name: "index_weapon_passives_on_weapon_id"
+  end
+
+  create_table "weapon_requirements", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "weapon_id", null: false
+    t.integer "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["weapon_id"], name: "index_weapon_requirements_on_weapon_id"
+  end
+
+  create_table "weapon_scalings", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "weapon_id", null: false
+    t.integer "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["weapon_id"], name: "index_weapon_scalings_on_weapon_id"
+  end
+
+  create_table "weapons", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", limit: 100
+    t.text "description"
+    t.integer "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_weapons_on_name"
   end
 
   add_foreign_key "cook_book_recipes", "cook_books"
   add_foreign_key "cook_book_recipes", "recipes"
   add_foreign_key "recipe_materials", "materials"
   add_foreign_key "recipe_materials", "recipes"
+  add_foreign_key "weapon_attacks", "weapons"
+  add_foreign_key "weapon_guards", "weapons"
+  add_foreign_key "weapon_passives", "weapons"
+  add_foreign_key "weapon_requirements", "weapons"
+  add_foreign_key "weapon_scalings", "weapons"
 end

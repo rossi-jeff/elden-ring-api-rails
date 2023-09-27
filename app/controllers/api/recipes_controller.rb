@@ -1,6 +1,7 @@
 class Api::RecipesController < ApplicationController
 	def index
 		@recipes = Recipe.all.order(:name)
+		# .left_joins(:recipe_materials,:materials).select('recipes.name,recipes.description,recipes.type,recipe_materials.quantity,materials.name as material_name')
 		render json: @recipes, status: :ok
 	end
 

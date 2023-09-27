@@ -23,6 +23,32 @@
                                          PATCH  /api/materials/:id(.:format)                                                                      api/materials#update
                                          PUT    /api/materials/:id(.:format)                                                                      api/materials#update
                                          DELETE /api/materials/:id(.:format)                                                                      api/materials#destroy
+                      api_weapon_attacks POST   /api/weapons/:weapon_id/attacks(.:format)                                                         api/weapons/attacks#create
+                       api_weapon_attack PATCH  /api/weapons/:weapon_id/attacks/:id(.:format)                                                     api/weapons/attacks#update
+                                         PUT    /api/weapons/:weapon_id/attacks/:id(.:format)                                                     api/weapons/attacks#update
+                                         DELETE /api/weapons/:weapon_id/attacks/:id(.:format)                                                     api/weapons/attacks#destroy
+                       api_weapon_guards POST   /api/weapons/:weapon_id/guards(.:format)                                                          api/weapons/guards#create
+                        api_weapon_guard PATCH  /api/weapons/:weapon_id/guards/:id(.:format)                                                      api/weapons/guards#update
+                                         PUT    /api/weapons/:weapon_id/guards/:id(.:format)                                                      api/weapons/guards#update
+                                         DELETE /api/weapons/:weapon_id/guards/:id(.:format)                                                      api/weapons/guards#destroy
+                     api_weapon_passives POST   /api/weapons/:weapon_id/passives(.:format)                                                        api/weapons/passives#create
+                      api_weapon_passife PATCH  /api/weapons/:weapon_id/passives/:id(.:format)                                                    api/weapons/passives#update
+                                         PUT    /api/weapons/:weapon_id/passives/:id(.:format)                                                    api/weapons/passives#update
+                                         DELETE /api/weapons/:weapon_id/passives/:id(.:format)                                                    api/weapons/passives#destroy
+                 api_weapon_requirements POST   /api/weapons/:weapon_id/requirements(.:format)                                                    api/weapons/requirements#create
+                  api_weapon_requirement PATCH  /api/weapons/:weapon_id/requirements/:id(.:format)                                                api/weapons/requirements#update
+                                         PUT    /api/weapons/:weapon_id/requirements/:id(.:format)                                                api/weapons/requirements#update
+                                         DELETE /api/weapons/:weapon_id/requirements/:id(.:format)                                                api/weapons/requirements#destroy
+                     api_weapon_scalings POST   /api/weapons/:weapon_id/scalings(.:format)                                                        api/weapons/scalings#create
+                      api_weapon_scaling PATCH  /api/weapons/:weapon_id/scalings/:id(.:format)                                                    api/weapons/scalings#update
+                                         PUT    /api/weapons/:weapon_id/scalings/:id(.:format)                                                    api/weapons/scalings#update
+                                         DELETE /api/weapons/:weapon_id/scalings/:id(.:format)                                                    api/weapons/scalings#destroy
+                             api_weapons GET    /api/weapons(.:format)                                                                            api/weapons#index
+                                         POST   /api/weapons(.:format)                                                                            api/weapons#create
+                              api_weapon GET    /api/weapons/:id(.:format)                                                                        api/weapons#show
+                                         PATCH  /api/weapons/:id(.:format)                                                                        api/weapons#update
+                                         PUT    /api/weapons/:id(.:format)                                                                        api/weapons#update
+                                         DELETE /api/weapons/:id(.:format)                                                                        api/weapons#destroy
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create

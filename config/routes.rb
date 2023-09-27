@@ -11,5 +11,12 @@ Rails.application.routes.draw do
 			resources :materials, only: [:create,:update,:destroy], controller: 'recipes/materials'
 		end
 		resources :materials
+		resources :weapons do
+			resources :attacks, only: [:create,:update,:destroy], controller: 'weapons/attacks' 
+			resources :guards, only: [:create,:update,:destroy], controller: 'weapons/guards'
+			resources :passives, only: [:create,:update,:destroy], controller: 'weapons/passives'
+			resources :requirements, only: [:create,:update,:destroy], controller: 'weapons/requirements'
+			resources :scalings, only: [:create,:update,:destroy], controller: 'weapons/scalings'
+		end
 	end
 end
