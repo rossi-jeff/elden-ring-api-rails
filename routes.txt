@@ -1,6 +1,7 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
                    api_cook_book_recipes POST   /api/cook_books/:cook_book_id/recipes(.:format)                                                   api/cook_books/recipes#create
                     api_cook_book_recipe DELETE /api/cook_books/:cook_book_id/recipes/:id(.:format)                                               api/cook_books/recipes#destroy
+                json_seed_api_cook_books GET    /api/cook_books/json_seed(.:format)                                                               api/cook_books#json_seed
                           api_cook_books GET    /api/cook_books(.:format)                                                                         api/cook_books#index
                                          POST   /api/cook_books(.:format)                                                                         api/cook_books#create
                            api_cook_book GET    /api/cook_books/:id(.:format)                                                                     api/cook_books#show
@@ -11,6 +12,7 @@
                      api_recipe_material PATCH  /api/recipes/:recipe_id/materials/:id(.:format)                                                   api/recipes/materials#update
                                          PUT    /api/recipes/:recipe_id/materials/:id(.:format)                                                   api/recipes/materials#update
                                          DELETE /api/recipes/:recipe_id/materials/:id(.:format)                                                   api/recipes/materials#destroy
+                   json_seed_api_recipes GET    /api/recipes/json_seed(.:format)                                                                  api/recipes#json_seed
                              api_recipes GET    /api/recipes(.:format)                                                                            api/recipes#index
                                          POST   /api/recipes(.:format)                                                                            api/recipes#create
                               api_recipe GET    /api/recipes/:id(.:format)                                                                        api/recipes#show

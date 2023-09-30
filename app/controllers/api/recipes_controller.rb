@@ -5,6 +5,27 @@ class Api::RecipesController < ApplicationController
 		render json: @recipes, status: :ok
 	end
 
+	def json_seed
+		output = []
+		@recipes = Recipe.all.order(:name)
+		@recipes.each do |recipe|
+			obj = {}
+			obj['name'] = recipe.name
+			obj['description'] = recipe.description
+			obj['materials'] = []
+			materials = RecipeMaterial.where(recipe_id: recipe.id).joins(:material)
+			materials.each do |mat|
+				child = {}
+				child['quantity'] = mat.quantity
+				child['name'] = mat.material.name
+				obj['materials'] << child
+			end
+			output << obj
+		end
+		render json: output, status: :ok
+	end
+
+
 	def create 
 		@recipe = Recipe.new(recipe_params)
 		if @recipe.save

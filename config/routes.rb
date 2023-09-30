@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 	namespace :api do
 		resources :cook_books do 
 			resources :recipes, only: [:create,:destroy], controller: 'cook_books/recipes'
+			collection do 
+				get 'json_seed'
+			end
 		end
 		resources :recipes do
 			resources :materials, only: [:create,:update,:destroy], controller: 'recipes/materials'
+			collection do 
+				get 'json_seed'
+			end
 		end
 		resources :materials
 		resources :weapons do

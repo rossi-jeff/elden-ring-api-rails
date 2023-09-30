@@ -1,6 +1,7 @@
 class Api::MaterialsController < ApplicationController
 	def index
 		@materials = Material.all.order(:name)
+		# .select(:name,:description)
 		render json: @materials, status: :ok
 	end
 

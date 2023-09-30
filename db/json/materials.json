@@ -188,6 +188,10 @@
 		"description": "An arcane butterfly with translucent wings.\r\nMaterial used for crafting items.\r\nExceedingly rare to find.\r\n\r\nThis butterfly appears as if it's just emerged from its cocoon for its entire life."
 	},
 	{
+		"name": "Old Fang",
+		"description": "A rarely-seen specimen of beast fang.\r\nMaterial used for crafting items.\r\nFound by hunting carnivorous beasts.\r\n\r\nThese multiple, overlapping fangs grow from a single root. Perhaps they're a vestige of the primordial crucible."
+	},
+	{
 		"name": "Perfume Bottle",
 		"description": "Glass bottles used by perfumers. Used to seal various scent compounds.\r\nEssential vessel for crafting perfume items.\r\nThe art of perfuming was once jealously guarded in the capital, but after the perfumers were drafted into service during the Shattering, the art became widely practiced throughout the Lands Between."
 	},
@@ -202,6 +206,10 @@
 	{
 		"name": "Rimed Rowa",
 		"description": "A berry-like fruit, thought to be the original strain of Rowa.\r\nMaterial used for crafting items.\r\nFound in frigid highlands.\r\n\r\nThis hardy species takes root even when frozen solid."
+	},
+	{
+		"name": "Ritual Pot",
+		"description": "This empty pot somehow mends itself when broken. Special item with greater durability than a cracked pot. \r\n\r\nEssential vessel for crafting ritual pot items. \r\n\r\nThe materials and magics sealed within deploy their effects when the pot is thrown."
 	},
 	{
 		"name": "Root Resin",
@@ -238,6 +246,10 @@
 	{
 		"name": "Slumbering Egg",
 		"description": "Owl eggs that will never hatch.\r\nMaterial used for crafting items.\r\n\r\nPrized as a symbol of the most sublime slumber."
+	},
+	{
+		"name": "Smoldering Butterfly",
+		"description": "An eternally burning butterfly found near wildfires and elsewhere.\r\nMaterial used for crafting items.\r\nServes as the kindling for a number of items."
 	},
 	{
 		"name": "Stormhawk Feather",
