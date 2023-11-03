@@ -23,6 +23,9 @@ Rails.application.routes.draw do
 			resources :passives, only: [:create,:update,:destroy], controller: 'weapons/passives'
 			resources :requirements, only: [:create,:update,:destroy], controller: 'weapons/requirements'
 			resources :scalings, only: [:create,:update,:destroy], controller: 'weapons/scalings'
+			collection do 
+				get 'json_seed'
+			end
 		end
 	end
 end
